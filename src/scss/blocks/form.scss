@@ -1,0 +1,11 @@
+.input,
+.textarea,
+.select {
+	width: 100%;	
+	background-color: #fff;
+	border: 1px solid black;
+	box-shadow: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: background-color .15s, box-shadow .15s;
+}

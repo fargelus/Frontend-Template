@@ -1,0 +1,26 @@
+a {
+	@include border-text();
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-italic {
+	font-style: italic;
+}
+
+.text-center {
+	text-align: center;
+	text-align-last: center;
+}
+
+.text-left {
+	text-align: left;
+	text-align-last: left;
+}
+
+.text-right {
+	text-align: right;
+	text-align-last: right;
+}

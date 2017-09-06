@@ -1,0 +1,75 @@
+@mixin reset-link {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+@mixin clearfix {
+
+	&:after {
+
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+}
+
+@mixin triangle($direction, $size, $color) {
+    width: 0;
+    height: 0;
+    border-width: $size;
+    border-style: solid;
+    border-color: $color;
+
+    @if $direction == "top" {
+    	border-left-color: transparent;
+	    border-right-color: transparent;
+	    border-top-style: none;
+    }
+
+    @if $direction == "right" {
+    	border-top-color: transparent;
+	    border-bottom-color: transparent;
+	    border-right: none;
+    }
+
+    @if $direction == "bottom" {
+    	border-bottom: none;
+	    border-left-color: transparent;
+	    border-right-color: transparent;
+    }
+
+    @if $direction == "left" {
+    	border-top-color: transparent;
+	    border-bottom-color: transparent;
+	    border-left: none;
+    }
+}
+
+@mixin ellipsis{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin border-link($color, $padding){
+	color: $color;
+	text-decoration: none;
+	border-bottom: 1px solid alpha($color, .3);
+	padding-bottom: $padding;
+	display: inline;
+}
+
+@mixin size($width, $height: $width){
+	height: $height;
+	width: $width;
+
+}
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
