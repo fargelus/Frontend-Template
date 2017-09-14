@@ -1,0 +1,25 @@
+@import "../vars";
+
+$queries: $small, $mobile, $tablet, $desc, 
+		  $more-small, $more-mobile, $more-tablet,
+		  $more-desc; // 8
+$index: 1;
+
+@each $size in small, mobile, tablet, desc
+{	
+	.hide-#{$size} {
+		$query: nth($queries, $index);
+		@media #{$query} {
+			display: none;
+		}
+	}
+
+	.hide-more#{$size} {
+		$query: nth($queries, $index + 4);
+		@media #{$query} {
+			display: none;
+		}
+	}
+
+	$index: $index + 1;
+}

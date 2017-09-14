@@ -66,7 +66,12 @@ module.exports = function(grunt) {
 			css:{
 				files: "src/scss/*.scss",
 				tasks: ["sass"]
-			}			
+			},
+
+			images: {
+				files: "src/images/*.{png,jpg,svg,gif}",
+				tasks: ["imagemin"]
+			}
 		}
 	});
 
@@ -74,9 +79,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-pug");
 	grunt.loadNpmTasks("grunt-contrib-sass");	
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks("grunt-browser-sync");
-	grunt.loadNpmTasks("grunt-browser-sync");
+	grunt.loadNpmTasks("grunt-browser-sync");	
 	grunt.loadNpmTasks("grunt-contrib-imagemin");
 
-	grunt.registerTask("default", ["pug", "sass", "browserSync", "watch"]);
+	grunt.registerTask("start", ["pug", "sass"]);
+	grunt.registerTask("default", ["browserSync", "watch"]);
 };

@@ -1,0 +1,23 @@
+
+@mixin createFontFace ($fontFamily) {
+		
+	$weightList: 300, 700;		
+	
+	@each $weight in $weightList {
+
+		@font-face{
+			
+			font: {
+				family: $fontFamily;
+				style: normal;
+				weight: $weight;
+			}
+
+			src: url("../fonts/#{$fontFamily}#{$weight}.eot");
+			src: url("../fonts/#{$fontFamily}#{$weight}.eot?#iefix") 
+				 format('embedded-opentype'),
+				 url("../fonts/#{$fontFamily}#{$weight}.woff") format("woff"),
+				 url("../fonts/#{$fontFamily}#{$weight}.ttf") format("ttf");			 
+		}
+	}
+}
