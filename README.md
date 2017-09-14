@@ -14,7 +14,9 @@ sudo gem install sass
 ```
 
 ### Сборка
+```bash
 grunt
+```
 
 ### Использование
 ```bash
