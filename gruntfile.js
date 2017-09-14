@@ -19,8 +19,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		sass: {
-
+		sass: {			
 			dist: {
 				files: [{
 					expand: true,
@@ -81,7 +80,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-browser-sync");	
 	grunt.loadNpmTasks("grunt-contrib-imagemin");
-
-	grunt.registerTask("start", ["pug", "sass"]);
-	grunt.registerTask("default", ["browserSync", "watch"]);
+	
+	grunt.registerTask("default", ["pug", "sass", "browserSync", "watch"]);
 };

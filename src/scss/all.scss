@@ -1,7 +1,3 @@
-@import "~normalize-scss/sass/normalize";
 @import "mixins";
 @import "typography";
-
-@import "blocks/*";
-
-@include normalize();
+@import "normalize";
