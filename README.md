@@ -17,3 +17,6 @@ grunt
 git clone ...
 ```
 Дальше скопировать все кроме папки .git в новый проект.
+
+### ESlint
+yarn add --dev eslint eslint-config-airbnb-base eslint-plugin-import
