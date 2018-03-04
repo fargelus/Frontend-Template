@@ -7,12 +7,6 @@ npm i -g grunt-cli
 npm i
 ```
 
-*Убедись, что sass и ruby установлены*
-```bash
-sudo apt-get install ruby-full
-sudo gem install sass
-```
-
 ### Сборка
 ```bash
 grunt
@@ -23,3 +17,8 @@ grunt
 git clone ...
 ```
 Дальше скопировать все кроме папки .git в новый проект.
+
+### ESlint
+```bash
+yarn add --dev eslint eslint-config-airbnb-base eslint-plugin-import
+```
