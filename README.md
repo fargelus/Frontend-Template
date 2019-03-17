@@ -3,13 +3,12 @@ frontend-template
 
 ### Зависимости
 ```bash
-npm i -g grunt-cli
-npm i
+yarn
 ```
 
-### Сборка
+### Dev Сборка
 ```bash
-grunt
+yarn run dev
 ```
 
 ### Использование
@@ -17,8 +16,3 @@ grunt
 git clone ...
 ```
 Дальше скопировать все кроме папки .git в новый проект.
-
-### ESlint
-```bash
-yarn add --dev eslint eslint-config-airbnb-base eslint-plugin-import
-```
