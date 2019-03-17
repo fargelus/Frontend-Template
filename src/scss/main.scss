@@ -6,7 +6,3 @@
 @import "base/typography";
 @import "modificators/modificators";
 @import "base/fonts";	// use createFontFace(fontFamily)
-
-@import "../../node_modules/foundation-sites/scss/foundation";
-@include foundation-global-styles;
-@include foundation-xy-grid-classes;

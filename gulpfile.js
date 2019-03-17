@@ -3,7 +3,6 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 
 const pug = require('gulp-pug');
-const w3cValidation = require('gulp-w3c-html-validation');
 
 const scss = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
@@ -12,8 +11,7 @@ const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
+const browserSync = require('browser-sync');
 
 const del = require('del');
 
@@ -48,7 +46,6 @@ gulp.task('views', () =>
   gulp.src(paths.views.src)
     .pipe(pug())
     .pipe(gulp.dest(paths.dest))
-    .pipe(w3cValidation())
     .pipe(reload({ stream: true })));
 
 
@@ -79,12 +76,14 @@ function isImage(file) {
 }
 
 gulp.task('assets', () =>
-  gulp.src(paths.images.src, { since: gulp.lastRun('assets') })
-    .pipe(gulpif(isImage), imagemin)
-    .pipe(gulp.dest(paths.images.dest)));
+  gulp.src(paths.assets.src, { since: gulp.lastRun('assets') })
+    .pipe(gulpif(isImage, imagemin()))
+    .pipe(gulp.dest(paths.dest)));
 
 
 // Static server
+browserSync.create();
+const reload = browserSync.reload;
 gulp.task('browserSync', () => {
   browserSync.init({
     server: paths.dest,
@@ -96,7 +95,7 @@ gulp.task('browserSync', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.views.all, gulp.series('views'));
   gulp.watch(paths.styles.all, gulp.series('styles'));
-  gulp.watch(paths.images.src, gulp.series('assets'));
+  gulp.watch(paths.assets.src, gulp.series('assets'));
   gulp.watch(paths.scripts.all, gulp.series('js'));
 });
 
